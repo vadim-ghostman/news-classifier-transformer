@@ -1,19 +1,19 @@
-import Image from "next/image";
-import { Geist, Geist_Mono } from "next/font/google";
-import { useState, useEffect } from "react";
+//import Image from "next/image";
+//import { Geist, Geist_Mono } from "next/font/google";
+//import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import InputForm from "../components/inputForm";
 import ResultCard from "../components/resultCard";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+//const geistSans = Geist({
+//  variable: "--font-geist-sans",
+//  subsets: ["latin"],
+//});
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+//const geistMono = Geist_Mono({
+//  variable: "--font-geist-mono",
+//  subsets: ["latin"],
+//});
 
 
 export default function Home() {
