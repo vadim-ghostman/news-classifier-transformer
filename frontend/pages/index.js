@@ -27,7 +27,7 @@ export default function Home() {
       const { pipeline } = await import("@xenova/transformers");
       const cls = await pipeline(
         "text-classification",
-        "/models/news-classifier/"
+        "/model/"
       );
       const sum = await pipeline(
         "summarization",
