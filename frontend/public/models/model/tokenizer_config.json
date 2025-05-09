@@ -1,0 +1,13 @@
+{
+  "add_prefix_space": false,
+  "bos_token": "[CLS]",
+  "cls_token": "[CLS]",
+  "eos_token": "[SEP]",
+  "mask_token": "[MASK]",
+  "pad_token": "[PAD]",
+  "sep_token": "[SEP]",
+  "unk_token": "[UNK]",
+  "model_max_length": 512,
+  "tokenizer_class": "BertTokenizer"
+}
+

@@ -1,29 +1,18 @@
-import { useState } from "react";
-
-export default function InputForm({ onSubmit }) {
-  const [text, setText] = useState("");
-
+export default function InputForm({ onResult }) {
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const text = e.target.elements.text.value;
+    const r = await fetch('/api/predict', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ text }),
+    });
+    onResult((await r.json()).category);
+  }
   return (
-    <form
-      className="w-full max-w-xl mx-auto p-4"
-      onSubmit={e => {
-        e.preventDefault();
-        onSubmit(text);
-      }}
-    >
-      <textarea
-        className="w-full p-2 border rounded mb-4"
-        rows={6}
-        placeholder="Paste article text or URL here…"
-        value={text}
-        onChange={e => setText(e.target.value)}
-      />
-      <button
-        type="submit"
-        className="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-      >
-        Analyze
-      </button>
+    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+      <textarea name="text" rows={6} className="border p-3 rounded" />
+      <button className="self-end px-4 py-2 bg-indigo-600 text-white rounded">Predict</button>
     </form>
   );
 }
